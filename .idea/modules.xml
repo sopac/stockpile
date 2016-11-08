@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/stockpile.iml" filepath="$PROJECT_DIR$/.idea/modules/stockpile.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/stockpile_main.iml" filepath="$PROJECT_DIR$/.idea/modules/stockpile_main.iml" group="stockpile" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/stockpile_test.iml" filepath="$PROJECT_DIR$/.idea/modules/stockpile_test.iml" group="stockpile" />
+    </modules>
+  </component>
+</project>

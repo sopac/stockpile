@@ -1,0 +1,72 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myAgencyLabel">Create or edit a Agency</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.agency.id">
+            <label for="id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.agency.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_name">Name</label>
+            <input type="text" class="form-control" name="name" id="field_name"
+                    ng-model="vm.agency.name"
+                    required />
+            <div ng-show="editForm.name.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.name.$error.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_organisationType">Organisation Type</label>
+            <input type="text" class="form-control" name="organisationType" id="field_organisationType"
+                    ng-model="vm.agency.organisationType"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_contact">Contact</label>
+            <input type="text" class="form-control" name="contact" id="field_contact"
+                    ng-model="vm.agency.contact"
+                     />
+        </div>
+        <div class="form-group" ngf-drop ngf-change="vm.setLogo($file, vm.agency)" ngf-pattern="'image/*'">
+            <label class="control-label" for="field_logo">Logo</label>
+            <div>
+                <img data-ng-src="{{'data:' + vm.agency.logoContentType + ';base64,' + vm.agency.logo}}" style="max-height: 100px;" ng-if="vm.agency.logo"/>
+                <div ng-if="vm.agency.logo" class="help-block clearfix">
+                    <span class="pull-left">{{vm.agency.logoContentType}}, {{vm.byteSize(vm.agency.logo)}}</span>
+                    <button type="button" ng-click="vm.agency.logo=null;vm.agency.logoContentType=null;"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </button>
+                </div>
+                <button type="button" ngf-select class="btn btn-default btn-block"
+                        ngf-change="vm.setLogo($file, vm.agency)" accept="image/*">
+                    Add image
+                </button>
+            </div>
+            <input type="hidden" class="form-control" name="logo" id="field_logo"
+                    ng-model="vm.agency.logo"
+                     />
+            <input type="hidden" class="form-control" name="logoContentType" id="field_logoContentType"
+                    ng-model="vm.agency.logoContentType" />
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span>Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span>Save</span>
+        </button>
+    </div>
+</form>

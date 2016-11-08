@@ -1,0 +1,51 @@
+
+<div>
+    <h2><span>Inventory</span> {{vm.inventory.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span>Year</span></dt>
+        <dd>
+            <span>{{vm.inventory.year}}</span>
+        </dd>
+        <dt><span>Month</span></dt>
+        <dd>
+            <span>{{vm.inventory.month}}</span>
+        </dd>
+        <dt><span>Quanity</span></dt>
+        <dd>
+            <span>{{vm.inventory.quanity}}</span>
+        </dd>
+        <dt><span>Item</span></dt>
+        <dd>
+            <a ui-sref="item-detail({id:vm.inventory.itemId})">{{vm.inventory.itemName}}</a>
+        </dd>
+        <dt><span>Country</span></dt>
+        <dd>
+            <a ui-sref="country-detail({id:vm.inventory.countryId})">{{vm.inventory.countryCountryName}}</a>
+        </dd>
+        <dt><span>Location</span></dt>
+        <dd>
+            <a ui-sref="location-detail({id:vm.inventory.locationId})">{{vm.inventory.locationLocation}}</a>
+        </dd>
+        <dt><span>Agency</span></dt>
+        <dd>
+            <a ui-sref="agency-detail({id:vm.inventory.agencyId})">{{vm.inventory.agencyName}}</a>
+        </dd>
+        <dt><span>Cluster</span></dt>
+        <dd>
+            <a ui-sref="cluster-detail({id:vm.inventory.clusterId})">{{vm.inventory.clusterName}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+
+    <button type="button" ui-sref="inventory-detail.edit({id:vm.inventory.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-xs hidden-sm"> Edit</span>
+    </button>
+</div>

@@ -1,0 +1,35 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "country",
+            "otherEntityName": "country",
+            "otherEntityField": "countryName",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "location"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "location",
+            "otherEntityName": "inventory",
+            "otherEntityRelationshipName": "location"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "location",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "locationType",
+            "fieldType": "LocationType",
+            "fieldValues": "PROVINCE,BRANCH,REGION,CITY,TOWN,VILLAGE"
+        }
+    ],
+    "changelogDate": "20161107211031",
+    "entityTableName": "location",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "no"
+}

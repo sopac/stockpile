@@ -1,0 +1,29 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "cluster",
+            "otherEntityName": "inventory",
+            "otherEntityRelationshipName": "cluster"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20161107211033",
+    "entityTableName": "cluster",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "no"
+}

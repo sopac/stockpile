@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: io.gatling:jsonpath_2.11:0.6.6">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.gatling/jsonpath_2.11/0.6.6/8f55e921b2fb12184c9f5028e4c38dbc41b640cd/jsonpath_2.11-0.6.6.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.gatling/jsonpath_2.11/0.6.6/d4b4ca1a86a5d0f8b2d730b4ead26334194f4120/jsonpath_2.11-0.6.6-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

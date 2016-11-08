@@ -1,0 +1,12 @@
+version: '2'
+services:
+    stockpile-postgresql:
+        container_name: stockpile-postgresql
+        image: postgres:9.5.4
+        # volumes:
+        #     - ~/volumes/jhipster/stockpile/postgresql/:/var/lib/postgresql/
+        environment:
+            - POSTGRES_USER=stockpile
+            - POSTGRES_PASSWORD=
+        ports:
+            - 5432:5432

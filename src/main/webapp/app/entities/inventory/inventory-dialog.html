@@ -1,0 +1,74 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myInventoryLabel">Create or edit a Inventory</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.inventory.id">
+            <label for="id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.inventory.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_year">Year</label>
+            <input type="number" class="form-control" name="year" id="field_year"
+                    ng-model="vm.inventory.year"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_month">Month</label>
+            <input type="number" class="form-control" name="month" id="field_month"
+                    ng-model="vm.inventory.month"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_quanity">Quanity</label>
+            <input type="number" class="form-control" name="quanity" id="field_quanity"
+                    ng-model="vm.inventory.quanity"
+                     />
+        </div>
+
+        <div class="form-group">
+            <label for="field_item">Item</label>
+            <select class="form-control" id="field_item" name="item" ng-model="vm.inventory.itemId" ng-options="item.id as item.name for item in vm.items"            >
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="field_country">Country</label>
+            <select class="form-control" id="field_country" name="country" ng-model="vm.inventory.countryId" ng-options="country.id as country.countryName for country in vm.countries"            >
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="field_location">Location</label>
+            <select class="form-control" id="field_location" name="location" ng-model="vm.inventory.locationId" ng-options="location.id as location.location for location in vm.locations"            >
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="field_agency">Agency</label>
+            <select class="form-control" id="field_agency" name="agency" ng-model="vm.inventory.agencyId" ng-options="agency.id as agency.name for agency in vm.agencies"            >
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="field_cluster">Cluster</label>
+            <select class="form-control" id="field_cluster" name="cluster" ng-model="vm.inventory.clusterId" ng-options="cluster.id as cluster.name for cluster in vm.clusters"            >
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span>Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span>Save</span>
+        </button>
+    </div>
+</form>

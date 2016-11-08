@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <!--
+        Added the constraints for entity Inventory.
+    -->
+    <changeSet id="20161107211029-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="item_id"
+                                 baseTableName="inventory"
+                                 constraintName="fk_inventory_item_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="item"/>
+
+        <addForeignKeyConstraint baseColumnNames="country_id"
+                                 baseTableName="inventory"
+                                 constraintName="fk_inventory_country_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="country"/>
+
+        <addForeignKeyConstraint baseColumnNames="location_id"
+                                 baseTableName="inventory"
+                                 constraintName="fk_inventory_location_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="location"/>
+
+        <addForeignKeyConstraint baseColumnNames="agency_id"
+                                 baseTableName="inventory"
+                                 constraintName="fk_inventory_agency_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="agency"/>
+
+        <addForeignKeyConstraint baseColumnNames="cluster_id"
+                                 baseTableName="inventory"
+                                 constraintName="fk_inventory_cluster_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="cluster"/>
+
+    </changeSet>
+</databaseChangeLog>

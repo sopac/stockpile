@@ -1,0 +1,71 @@
+
+entity Item {
+	name String required
+    description String
+}
+
+	//item Item required
+  	//Country    
+    //Location
+    //Agency
+    //Cluster    
+entity Inventory {	
+    year Integer
+    month Integer  
+    quanity Double
+}
+
+entity Country {
+	countryName String required
+    countryCode String required    
+}
+
+entity Location {
+	location String
+    locationType LocationType    
+}
+
+enum LocationType {
+	PROVINCE, BRANCH, REGION, CITY, TOWN, VILLAGE
+}
+
+entity Agency {
+	name String required
+    organisationType String
+    contact String
+    logo ImageBlob
+}
+
+entity Cluster {
+	name String required
+    description String
+}
+
+//relationships
+relationship OneToOne {
+	Location{country} to Country
+}
+
+//relationship ManyToMany {
+	//Inventory{item(name)} to Item{inventory}
+    //Job{task(title)} to Task{job}
+//}
+
+relationship OneToMany {
+	Item{item} to Inventory,
+	Country{country} to Inventory,
+    Location{location} to Inventory,
+    Agency{agency} to Inventory,
+    Cluster{cluster} to Inventory
+}
+
+
+// Set pagination options
+paginate Inventory with infinite-scroll
+paginate Item with pagination
+
+dto * with mapstruct
+
+//Set service options to all except few
+//service all with serviceImpl 
+//except Employee, Job

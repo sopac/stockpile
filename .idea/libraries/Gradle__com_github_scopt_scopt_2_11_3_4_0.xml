@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.scopt:scopt_2.11:3.4.0">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.scopt/scopt_2.11/3.4.0/42cb5f951e3583442a942e787a8d6e982a12e0d4/scopt_2.11-3.4.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.scopt/scopt_2.11/3.4.0/e0f4347bbe37845848306233d10c35a11b7f1253/scopt_2.11-3.4.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
