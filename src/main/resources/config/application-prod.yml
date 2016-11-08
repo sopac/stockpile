@@ -20,9 +20,9 @@ spring:
     datasource:
         type: com.zaxxer.hikari.HikariDataSource
         url: jdbc:postgresql://localhost:5432/stockpile
-        name:
+        name: postgres
         username: stockpile
-        password:
+        password: erlang44
     jpa:
         database-platform: org.sopac.stockpile.domain.util.FixedPostgreSQL82Dialect
         database: POSTGRESQL
